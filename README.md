@@ -4,3 +4,4 @@ Python
 OOP
 By: Guillaume
 Weight: 5
+The project to be done by two people
