@@ -1,19 +1,24 @@
 #!/usr/bin/python3
-"""Defines the BaseModel class."""
+"""Explains the BaseModel class"""
 import models
 from uuid import uuid4
 from datetime import datetime
 
 
 class BaseModel:
-    """Represents the BaseModel of the HBnB project."""
+    """the BaseModel of the HBnB project"""
+
+    def save(self):
+        """Update updated_at with the current datetime."""
+        self.updated_at = datetime.today()
+        models.storage.save()
 
     def __init__(self, *args, **kwargs):
-        """Initialize a new BaseModel.
+        """Start up a new BaseModel
 
         Args:
-            *args (any): Unused.
-            **kwargs (dict): Key/value pairs of attributes.
+            *args (any): Unused
+            **kwargs (dict): value pairs of attributes
         """
         tform = "%Y-%m-%dT%H:%M:%S.%f"
         self.id = str(uuid4())
@@ -28,15 +33,11 @@ class BaseModel:
         else:
             models.storage.new(self)
 
-    def save(self):
-        """Update updated_at with the current datetime."""
-        self.updated_at = datetime.today()
-        models.storage.save()
 
     def to_dict(self):
-        """Return the dictionary of the BaseModel instance.
+        """Return the dictionary of the BaseModel
 
-        Includes the key/value pair __class__ representing
+        Includes the value pair __class__ representing
         the class name of the object.
         """
         rdict = self.__dict__.copy()
