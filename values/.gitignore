@@ -1,0 +1,10 @@
+# Emacs buffer
+*#
+*~
+
+# Ignore object files
+*.o
+
+### Python ###
+# Byte-compiled
+__pycache__/
