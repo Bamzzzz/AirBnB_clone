@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """Explain the HBnB console"""
+import re
 import cmd
-import shlex
-import json
 from models import storage
 from models.base_model import BaseModel
 from models.place import Place
