@@ -17,14 +17,13 @@ The AirBnB console can be run both interactively and non-interactively.
 
 $ echo "help" | ./console.py
 (hbnb)
-Documented commands (type help <topic>):
-========================================
+
 EOF  all  count  create  destroy  help  quit  show  update
 
 (hbnb)
 $
 Alternatively, to use the AirBnB console in interactive mode, run the
-file console.py by itself:
+file console.py by itself 
 
 $ ./console.py
 
@@ -43,3 +42,14 @@ $
 $ ./console.py
 (hbnb) EOF
 $
+
+Testing:
+Unittests for the AirBnB project are defined in the tests
+folder. To run the entire test suite simultaneously, execute the following command:
+
+$ python3 unittest -m discover tests
+
+
+Alternatively, you can specify a single test file to run at a time:
+
+$ python3 -m unittest tests/test_console.py
